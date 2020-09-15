@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
   flare_splash_screen: ^3.0.1
   chopper: ^3.0.3
+  get_it: ^5.0.0
+
 
 
 
