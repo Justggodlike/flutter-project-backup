@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/core/common/index.dart';
+import 'package:help_me/core/models/index.dart';
+import 'package:help_me/core/services/index.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/pages/authorization/authorization_tab_base.dart';
 
@@ -11,7 +14,7 @@ class SignInPage extends StatelessWidget {
     AuthRichTextSpanModel(
       text: 'Terms of Service',
       isTappable: true,
-      onTap: () async => await navigationService.navigateTo(Pages.shell),
+      onTap: () async => await navigationService.navigateTo(Pages.home),
     ),
     AuthRichTextSpanModel(
       text: ' and ',
@@ -20,7 +23,7 @@ class SignInPage extends StatelessWidget {
     AuthRichTextSpanModel(
       text: 'Privacy Policy',
       isTappable: true,
-      onTap: () async => await navigationService.navigateTo(Pages.categories),
+      onTap: () async => await navigationService.navigateTo(Pages.home),
     ),
   ];
 
@@ -30,6 +33,7 @@ class SignInPage extends StatelessWidget {
 
     return AuthorizationTabBase(children: <Widget>[
       SizedBox(height: 20.0),
+      //AuthTextFiled
     ]);
   }
 }
