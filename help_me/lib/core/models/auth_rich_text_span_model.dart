@@ -1,9 +1,9 @@
-class AuthRichSpanModel {
+class AuthRichTextSpanModel {
   final String text;
   final bool isTappable;
   final Function onTap;
 
-  AuthRichSpanModel({
+  AuthRichTextSpanModel({
     this.text = '',
     this.isTappable = false,
     this.onTap,
