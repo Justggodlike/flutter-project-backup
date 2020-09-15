@@ -1,4 +1,6 @@
+import 'package:flare_splash_screen/flare_splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:help_me/ui/decorations/assets.dart';
 import 'package:help_me/ui/pages/index.dart';
 
 import 'generated/i18n.dart';
@@ -18,7 +20,14 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blueGrey,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: MyHomePage(title: 'HelpMe'),
+        home: SplashScreen.navigate(
+          name: Assets.splashLoader,
+          next: (_) => MyHomePage(
+            title: 'HelpMe',
+          ),
+          until: () => Future.delayed(Duration(seconds: 5)),
+          startAnimation: '1',
+        ),
         localizationsDelegates: [i18n],
         supportedLocales: i18n.supportedLocales,
         localeResolutionCallback: i18n.resolution(
