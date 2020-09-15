@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         home: SplashScreen.navigate(
           name: Assets.splashLoader,
-          next: (_) => MyHomePage(
+          next: (_) => HomePage(
             title: 'HelpMe',
           ),
           until: () => Future.delayed(Duration(seconds: 5)),
