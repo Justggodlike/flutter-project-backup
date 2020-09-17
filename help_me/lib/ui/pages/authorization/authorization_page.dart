@@ -14,7 +14,7 @@ class AuthorizationPage extends StatelessWidget {
     );
 
     return DefaultTabController(
-      length: 2,
+      length: 3,
       child: Scaffold(
         backgroundColor: Color.fromARGB(250, 250, 255, 255),
         appBar: AppBar(

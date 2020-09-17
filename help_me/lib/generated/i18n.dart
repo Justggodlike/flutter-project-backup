@@ -44,6 +44,10 @@ class I18n implements WidgetsLocalizations {
   String get password => "PASSWORD";
   /// "USERNAME / EMAIL"
   String get usernameOrEmail => "USERNAME / EMAIL";
+  /// "Log In"
+  String get logIn => "Log In";
+  /// "Sign In"
+  String get signIn => "Sign In";
 }
 
 class _I18n_en_US extends I18n {

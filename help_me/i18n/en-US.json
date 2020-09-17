@@ -4,5 +4,7 @@
     "email": "EMAIL",
     "username": "USERNAME",
     "password": "PASSWORD",
-    "usernameOrEmail": "USERNAME / EMAIL"
+    "usernameOrEmail": "USERNAME / EMAIL",
+    "logIn": "Log In",
+    "signIn": "Sign In"
 }

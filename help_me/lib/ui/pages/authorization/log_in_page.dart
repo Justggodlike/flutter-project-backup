@@ -3,6 +3,7 @@ import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
 import 'package:help_me/ui/widgets/authorization/index.dart';
+import 'package:help_me/ui/widgets/button/index.dart';
 
 class LogInPage extends StatefulWidget {
   @override
@@ -53,6 +54,11 @@ class _LogInPageState extends State<LogInPage> {
               )
             ],
           ),
+        ),
+        SizedBox(height: 14.0),
+        PrimaryButtonWidget(
+          text: localization.logIn,
+          onPressedFunction: () {}, //TODO: add providers handler to it
         ),
       ],
     );

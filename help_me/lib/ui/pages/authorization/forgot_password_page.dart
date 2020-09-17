@@ -4,6 +4,7 @@ import 'package:help_me/ui/decorations/index.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
 import 'package:help_me/ui/widgets/authorization/auth_text_filed.dart';
 import 'package:help_me/ui/widgets/authorization/index.dart';
+import 'package:help_me/ui/widgets/button/index.dart';
 
 class ForgotPasswordPage extends StatelessWidget {
   @override
@@ -19,6 +20,11 @@ class ForgotPasswordPage extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             assetIconPath: Assets.mailIcon,
           ),
+        ),
+        SizedBox(height: 14.0),
+        PrimaryButtonWidget(
+          text: localization.logIn,
+          onPressedFunction: () {}, //TODO: add providers handler to it
         ),
       ],
     );
