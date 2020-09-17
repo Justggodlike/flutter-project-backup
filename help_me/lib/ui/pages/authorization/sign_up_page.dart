@@ -34,9 +34,6 @@ class SignUpPage extends StatelessWidget {
           ),
         ),
         SizedBox(height: 14.0),
-        FlatButton(
-          color: Colors.pink,
-        ),
       ],
     );
   }

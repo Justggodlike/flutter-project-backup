@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
+import 'package:help_me/ui/pages/authorization/log_in_page.dart';
 
 class AuthorizationPage extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class AuthorizationPage extends StatelessWidget {
     );
 
     return DefaultTabController(
-      length: 1,
+      length: 2,
       child: Scaffold(
         backgroundColor: Color.fromARGB(250, 250, 255, 255),
         appBar: AppBar(
@@ -22,7 +23,7 @@ class AuthorizationPage extends StatelessWidget {
           bottom: TabBar(
             tabs: <Widget>[
               Text('SignUp'),
-              // Text('LogIn'),
+              Text('LogIn'),
               // Text('Forgon Passwort'),
             ],
             indicatorColor: Colors.transparent,
@@ -33,7 +34,10 @@ class AuthorizationPage extends StatelessWidget {
           ),
         ),
         body: TabBarView(
-          children: <Widget>[SignUpPage()],
+          children: <Widget>[
+            SignUpPage(),
+            LogInPage(),
+          ],
         ),
       ),
     );
