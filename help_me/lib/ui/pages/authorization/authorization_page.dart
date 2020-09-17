@@ -22,9 +22,9 @@ class AuthorizationPage extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           bottom: TabBar(
             tabs: <Widget>[
-              Text('SignUp'),
+              Text('SignUp'), //TODO: repalce to i18n!
               Text('LogIn'),
-              // Text('Forgon Passwort'),
+              Text('Forgon Passwort'),
             ],
             indicatorColor: Colors.transparent,
             labelStyle: tabStyle,
@@ -37,6 +37,7 @@ class AuthorizationPage extends StatelessWidget {
           children: <Widget>[
             SignUpPage(),
             LogInPage(),
+            ForgotPasswordPage(),
           ],
         ),
       ),
