@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class ButtonBaseWidget extends StatelessWidget {
   final Color buttonColor;
   final Color textColor;
   final String text;
+  final String assetsIcon;
   final bool isDisabled;
   final Function onPressed;
 
@@ -13,6 +15,7 @@ class ButtonBaseWidget extends StatelessWidget {
     @required this.textColor,
     @required this.text,
     @required this.onPressed,
+    @required this.assetsIcon,
     this.isDisabled = false,
   });
 
@@ -41,6 +44,10 @@ class ButtonBaseWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: textColor,
+              ),
+              child: SvgPicture.asset(
+                assetsIcon,
+                color: buttonColor,
               ),
             ),
           ],
