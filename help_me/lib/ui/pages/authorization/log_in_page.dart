@@ -39,7 +39,7 @@ class _LogInPageState extends State<LogInPage> {
 
     return AuthorizationTabBase(
       children: <Widget>[
-        SizedBox(height: 40.0),
+        SizedBox(height: 40.0), //TODO: add insets as a const!!!
         AuthTextFieldAreaContainer(
           child: Column(
             children: <Widget>[

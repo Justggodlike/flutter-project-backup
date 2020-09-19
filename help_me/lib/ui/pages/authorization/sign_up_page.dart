@@ -35,10 +35,10 @@ class SignUpPage extends StatelessWidget {
             ],
           ),
         ),
-        SizedBox(height: 14.0),
-        SizedBox(height: 14.0),
+        SizedBox(height: 14.0), //TODO: add insets as a const!!!
+        SizedBox(height: 14.0), //TODO: add insets as a const!!!
         PrimaryButtonWidget(
-          text: localization.signIn,
+          text: localization.signUp,
           onPressedFunction: () {}, //TODO: add providers handler to it
         ),
       ],

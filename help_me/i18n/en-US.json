@@ -6,7 +6,8 @@
     "password": "PASSWORD",
     "usernameOrEmail": "USERNAME / EMAIL",
     "logIn": "Log In",
-    "signIn": "Sign In",
+    "signUp": "SignUp",
     "helpMe": "HelpMe",
-    "send": "Send"
+    "send": "Send",
+    "forgotPassword":"Forgot Password"
 }

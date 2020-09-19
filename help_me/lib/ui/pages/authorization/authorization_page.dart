@@ -24,9 +24,9 @@ class AuthorizationPage extends StatelessWidget {
               250, 250, 255, 255), //TODO: make colors as const!!!
           bottom: TabBar(
             tabs: <Widget>[
-              Text('SignUp'), //TODO: repalce to i18n!
-              Text('LogIn'),
-              Text('Forgon Passwort'),
+              Text(localization.signUp),
+              Text(localization.logIn),
+              Text(localization.forgotPassword),
             ],
             indicatorColor: Colors.transparent,
             labelStyle: tabStyle,

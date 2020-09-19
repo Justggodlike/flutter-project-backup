@@ -14,7 +14,7 @@ class ForgotPasswordPage extends StatelessWidget {
     return AuthorizationTabBase(
       children: <Widget>[
         SizedBox(
-          height: 40,
+          height: 40, //TODO: add insets as a const!!!
         ),
         AuthTextFieldAreaContainer(
           child: AuthTextFiled(
@@ -23,7 +23,7 @@ class ForgotPasswordPage extends StatelessWidget {
             assetIconPath: Assets.mailIcon,
           ),
         ),
-        SizedBox(height: 14.0),
+        SizedBox(height: 14.0), //TODO: add insets as a const!!!
         PrimaryButtonWidget(
           text: localization.send,
           onPressedFunction: () {}, //TODO: add providers handler to it
