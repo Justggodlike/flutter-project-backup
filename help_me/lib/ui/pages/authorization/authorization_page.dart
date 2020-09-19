@@ -16,10 +16,12 @@ class AuthorizationPage extends StatelessWidget {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        backgroundColor: Color.fromARGB(250, 250, 255, 255),
+        backgroundColor:
+            Color.fromARGB(250, 250, 255, 255), //TODO: make colors as const!!!
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: Color.fromARGB(
+              250, 250, 255, 255), //TODO: make colors as const!!!
           bottom: TabBar(
             tabs: <Widget>[
               Text('SignUp'), //TODO: repalce to i18n!

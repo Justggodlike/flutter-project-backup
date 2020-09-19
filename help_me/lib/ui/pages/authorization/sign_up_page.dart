@@ -12,7 +12,7 @@ class SignUpPage extends StatelessWidget {
 
     return AuthorizationTabBase(
       children: <Widget>[
-        SizedBox(height: 20.0),
+        SizedBox(height: 19.0), //TODO: add insets as a const!!!
         AuthTextFieldAreaContainer(
           child: Column(
             mainAxisSize: MainAxisSize.min,
