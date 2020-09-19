@@ -16,7 +16,7 @@ class AuthTextFieldAreaContainer extends StatelessWidget {
           BoxShadow(
             offset: Offset(0, 8.0),
             blurRadius: 15,
-            color: Color(0xffE7EAF0),
+            color: Color(0x85858585),
           )
         ],
       ),

@@ -6,14 +6,14 @@ class AuthTextFiled extends StatelessWidget {
   final String labelText;
   final String assetIconPath;
   final TextInputType keyboardType;
-  final bool wrongText;
+  final bool obscureText;
 
   AuthTextFiled({
     this.textController,
     this.labelText = '',
     this.assetIconPath = '',
     this.keyboardType = TextInputType.text,
-    this.wrongText = false,
+    this.obscureText = false,
   });
 
   @override
@@ -21,10 +21,13 @@ class AuthTextFiled extends StatelessWidget {
     return TextField(
       controller: textController,
       keyboardType: keyboardType,
-      obscureText: wrongText,
+      obscureText: obscureText,
       decoration: InputDecoration(
         labelText: labelText,
-        //TODO add label style
+        labelStyle: Theme.of(context).textTheme.headline5.copyWith(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
         prefixIcon: SvgPicture.asset(
           assetIconPath,
           fit: BoxFit.scaleDown,

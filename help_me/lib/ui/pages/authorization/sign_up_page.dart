@@ -28,6 +28,7 @@ class SignUpPage extends StatelessWidget {
               ),
               AuthTextFiled(
                 labelText: localization.password,
+                obscureText: true,
                 keyboardType: TextInputType.visiblePassword,
                 assetIconPath: Assets.passwordIcon,
               ),

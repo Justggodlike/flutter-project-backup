@@ -52,6 +52,7 @@ class _LogInPageState extends State<LogInPage> {
               AuthTextFiled(
                 textController: passwordController,
                 labelText: localization.password,
+                obscureText: true,
                 keyboardType: TextInputType.visiblePassword,
                 assetIconPath: Assets.passwordIcon,
               )
