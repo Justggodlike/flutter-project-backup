@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:help_me/generated/i18n.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.title}) : super(key: key);
+  HomePage({Key key, this.title});
 
   final String title;
 
@@ -22,9 +22,10 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var localization = I18n.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(localization.helpMe),
       ),
       body: Center(
         child: Column(

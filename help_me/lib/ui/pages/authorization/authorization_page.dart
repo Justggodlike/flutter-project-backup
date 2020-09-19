@@ -9,7 +9,7 @@ class AuthorizationPage extends StatelessWidget {
     final localization = I18n.of(context);
     final tabStyle = TextStyle(
       color: Color(0xff515C6F).withOpacity(0.5),
-      fontSize: 12.0,
+      fontSize: 28.0,
       fontWeight: FontWeight.w500,
     );
 
@@ -18,7 +18,7 @@ class AuthorizationPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Color.fromARGB(250, 250, 255, 255),
         appBar: AppBar(
-          elevation: 0.0,
+          elevation: 0,
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           bottom: TabBar(
             tabs: <Widget>[

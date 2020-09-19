@@ -48,6 +48,8 @@ class I18n implements WidgetsLocalizations {
   String get logIn => "Log In";
   /// "Sign In"
   String get signIn => "Sign In";
+  /// "HelpMe"
+  String get helpMe => "HelpMe";
 }
 
 class _I18n_en_US extends I18n {

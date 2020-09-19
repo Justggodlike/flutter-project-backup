@@ -1,4 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:help_me/core/common/index.dart';
+import 'package:help_me/core/services/dependency_service.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
@@ -58,9 +61,28 @@ class _LogInPageState extends State<LogInPage> {
         SizedBox(height: 14.0),
         PrimaryButtonWidget(
           text: localization.logIn,
-          onPressedFunction: () {}, //TODO: add providers handler to it
+          onPressedFunction: () async =>
+              loginButtonPressHandler(), //TODO: add providers handler to it
         ),
       ],
     );
+  }
+
+  Future loginButtonPressHandler() async {
+    var creds = 'qwer';
+
+    if (emailOrUserNameController.text != creds &&
+        passwordController.text != creds) {
+      await showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          elevation: 10.0,
+          title: Text('Alert'),
+          content: Text('Username or password is incorrect (try: qwer/qwer)'),
+        ),
+      );
+    } else {
+      await navigationService.navigateTo(Pages.home);
+    }
   }
 }
