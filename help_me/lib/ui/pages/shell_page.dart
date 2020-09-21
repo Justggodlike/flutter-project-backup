@@ -3,6 +3,7 @@ import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/provider_models/index.dart';
 import 'package:help_me/ui/notify_provider_widget.dart';
 import 'package:help_me/ui/pages/index.dart';
+import 'package:help_me/ui/widgets/navbar/index.dart';
 
 class ShellPage extends StatefulWidget {
   @override
@@ -20,7 +21,9 @@ class _ShellPageState extends State<ShellPage> {
             backgroundColor: Colors.blue,
           ),
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          body: buildBody(model.selectedPage),
+          body: 
+            buildBody(model.selectedPage),
+            bottomNavigationBar: BottomNavigationBarWidget(),
         );
       },
     );
