@@ -21,9 +21,8 @@ class _ShellPageState extends State<ShellPage> {
             backgroundColor: Colors.blue,
           ),
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
-          body: 
-            buildBody(model.selectedPage),
-            bottomNavigationBar: BottomNavigationBarWidget(),
+          body: buildBody(model.selectedPage),
+          bottomNavigationBar: BottomNavigationBarWidget(),
         );
       },
     );
@@ -33,6 +32,8 @@ class _ShellPageState extends State<ShellPage> {
     switch (pageType) {
       case Pages.home:
         return HomePage();
+      case Pages.create:
+        return CereateAdvertPage();
       default:
         return HomePage();
     }

@@ -31,6 +31,9 @@ class NavigationService {
       case Pages.home:
         resultPage = HomePage();
         break;
+      case Pages.create:
+        resultPage = CereateAdvertPage();
+        break;
       case Pages.authorization:
         resultPage = AuthorizationPage();
         break;

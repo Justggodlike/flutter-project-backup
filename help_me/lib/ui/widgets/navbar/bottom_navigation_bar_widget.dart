@@ -5,35 +5,17 @@ import 'package:help_me/generated/i18n.dart';
 import 'package:line_icons/line_icons.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
+  final int selectedIndex;
+
+  BottomNavigationBarWidget({
+    this.selectedIndex = 0,
+  });
   @override
   _BottomNavigationBarWidgetState createState() =>
       _BottomNavigationBarWidgetState();
 }
 
 class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
-  
-  int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Likes',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Profile',
-      style: optionStyle,
-    ),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -72,10 +54,10 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
                   text: 'Wallet',
                 ),
               ],
-              selectedIndex: _selectedIndex,
+              selectedIndex: widget.selectedIndex,
               onTabChange: (index) {
                 setState(() {
-                  _selectedIndex = index;
+                  //selectedIndex = index;
                 });
               }),
         ),
