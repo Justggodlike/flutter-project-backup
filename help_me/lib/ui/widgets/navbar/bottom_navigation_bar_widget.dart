@@ -6,11 +6,12 @@ import 'package:line_icons/line_icons.dart';
 
 class BottomNavigationBarWidget extends StatefulWidget {
   @override
-  _BottomNavigationBarWidgetState createState() => _BottomNavigationBarWidgetState();
+  _BottomNavigationBarWidgetState createState() =>
+      _BottomNavigationBarWidgetState();
 }
 
 class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
-  int _counter = 0;
+  
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
@@ -32,12 +33,6 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
       style: optionStyle,
     ),
   ];
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
