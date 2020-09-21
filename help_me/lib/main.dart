@@ -1,11 +1,12 @@
 import 'package:flare_splash_screen/flare_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:help_me/ui/decorations/assets.dart';
-import 'package:help_me/ui/pages/index.dart';
-
+import 'package:help_me/ui/pages/authorization/authorization_page.dart';
+import 'core/services/index.dart';
 import 'generated/i18n.dart';
 
 void main() {
+  DependencyService.registerDependencies();
   runApp(MyApp());
 }
 
@@ -22,12 +23,11 @@ class MyApp extends StatelessWidget {
         ),
         home: SplashScreen.navigate(
           name: Assets.splashLoader,
-          next: (_) => HomePage(
-            title: 'HelpMe',
-          ),
+          next: (_) => AuthorizationPage(),
           until: () => Future.delayed(Duration(seconds: 5)),
           startAnimation: '1',
         ),
+        navigatorKey: navigationService.navigatorKey,
         localizationsDelegates: [i18n],
         supportedLocales: i18n.supportedLocales,
         localeResolutionCallback: i18n.resolution(

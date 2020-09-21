@@ -1,4 +1,13 @@
 {
     "greetTo": "Hello {name}",
-    "pushedTimes": "You have pushed the button this many times:"
+    "pushedTimes": "You have pushed the button this many times:",
+    "email": "EMAIL",
+    "username": "USERNAME",
+    "password": "PASSWORD",
+    "usernameOrEmail": "USERNAME / EMAIL",
+    "logIn": "Log In",
+    "signUp": "SignUp",
+    "helpMe": "HelpMe",
+    "send": "Send",
+    "forgotPassword":"Forgot Password"
 }

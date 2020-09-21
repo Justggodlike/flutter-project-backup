@@ -36,6 +36,24 @@ class I18n implements WidgetsLocalizations {
   String greetTo(String name) => "Hello ${name}";
   /// "You have pushed the button this many times:"
   String get pushedTimes => "You have pushed the button this many times:";
+  /// "EMAIL"
+  String get email => "EMAIL";
+  /// "USERNAME"
+  String get username => "USERNAME";
+  /// "PASSWORD"
+  String get password => "PASSWORD";
+  /// "USERNAME / EMAIL"
+  String get usernameOrEmail => "USERNAME / EMAIL";
+  /// "Log In"
+  String get logIn => "Log In";
+  /// "SignUp"
+  String get signUp => "SignUp";
+  /// "HelpMe"
+  String get helpMe => "HelpMe";
+  /// "Send"
+  String get send => "Send";
+  /// "Forgot Password"
+  String get forgotPassword => "Forgot Password";
 }
 
 class _I18n_en_US extends I18n {
