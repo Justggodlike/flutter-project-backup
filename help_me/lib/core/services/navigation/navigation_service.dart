@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:help_me/core/common/index.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
-import 'package:help_me/ui/pages/home_page.dart';
+import 'package:help_me/ui/pages/index.dart';
 
 class NavigationService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -25,6 +25,9 @@ class NavigationService {
     var resultPage;
 
     switch (page) {
+      case Pages.shell:
+        resultPage = ShellPage();
+        break;
       case Pages.home:
         resultPage = HomePage();
         break;

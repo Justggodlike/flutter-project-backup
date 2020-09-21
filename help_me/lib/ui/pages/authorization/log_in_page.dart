@@ -83,7 +83,7 @@ class _LogInPageState extends State<LogInPage> {
         ),
       );
     } else {
-      await navigationService.navigateTo(Pages.home);
+      await navigationService.navigateWithReplacementTo(Pages.shell);
     }
   }
 }
