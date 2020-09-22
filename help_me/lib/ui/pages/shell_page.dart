@@ -18,7 +18,8 @@ class _ShellPageState extends State<ShellPage> {
       builder: (context, model, child) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Color(0xffffffff),
+            elevation: 0,
           ),
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           body: buildBody(model.selectedPage),
