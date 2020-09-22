@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:help_me/core/common/index.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
+import 'package:help_me/ui/pages/create_advert/vacancy_page/index.dart';
 import 'package:help_me/ui/pages/index.dart';
 
 class NavigationService {
@@ -33,6 +34,9 @@ class NavigationService {
         break;
       case Pages.create:
         resultPage = CereateAdvertPage();
+        break;
+      case Pages.createVacancy:
+        resultPage = CreateVacancyPage();
         break;
       case Pages.authorization:
         resultPage = AuthorizationPage();

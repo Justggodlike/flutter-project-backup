@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:help_me/core/common/index.dart';
+import 'package:help_me/core/services/dependency_service.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/widgets/button/index.dart';
 import 'package:help_me/ui/widgets/text_filed/index.dart';
@@ -32,7 +34,9 @@ class _CreateAdvertPageState extends State<CereateAdvertPage> {
           const SizedBox(height: 30),
           PrimaryButtonWidget(
             text: 'Vacancy',
-            onPressedFunction: () => {},
+            onPressedFunction: () => {
+              navigationService.navigateTo(Pages.createVacancy),
+            },
           ),
           const SizedBox(height: 15),
           PrimaryButtonWidget(

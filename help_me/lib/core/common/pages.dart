@@ -3,5 +3,6 @@ enum Pages {
   home,
   create,
   profile,
+  createVacancy,
   authorization,
 }
