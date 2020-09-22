@@ -3,6 +3,28 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:help_me/core/services/index.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
+import 'package:help_me/ui/widgets/sphere_list_widget/index.dart';
+
+final List<SphereItemModel> sphereList = [
+  SphereItemModel(
+    'first',
+  ),
+  SphereItemModel(
+    'first',
+  ),
+  SphereItemModel(
+    'first',
+  ),
+  SphereItemModel(
+    'first',
+  ),
+  SphereItemModel(
+    'first',
+  ),
+  SphereItemModel(
+    'first',
+  ),
+];
 
 class VacancyCategoriesPage extends StatefulWidget {
   @override
@@ -39,6 +61,9 @@ class _VacancyCategoriesPageState extends State<VacancyCategoriesPage> {
               localization.selectScopeOfEmployment,
               style: Theme.of(context).textTheme.headline6,
             ),
+            SphereItemsListWidget(
+              itemsList: sphereList,
+            )
           ],
         ),
       ),
