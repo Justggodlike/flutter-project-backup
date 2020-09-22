@@ -6,12 +6,12 @@ import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/widgets/button/index.dart';
 import 'package:help_me/ui/widgets/text_filed/index.dart';
 
-class CereateAdvertPage extends StatefulWidget {
+class CreateAdvertPage extends StatefulWidget {
   @override
   _CreateAdvertPageState createState() => _CreateAdvertPageState();
 }
 
-class _CreateAdvertPageState extends State<CereateAdvertPage> {
+class _CreateAdvertPageState extends State<CreateAdvertPage> {
   @override
   Widget build(BuildContext context) {
     var localization = I18n.of(context);

@@ -39,7 +39,7 @@ class _ShellPageState extends State<ShellPage> {
       case Pages.home:
         return HomePage();
       case Pages.create:
-        return CereateAdvertPage();
+        return CreateAdvertPage();
       default:
         return HomePage();
     }

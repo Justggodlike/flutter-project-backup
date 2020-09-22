@@ -33,7 +33,7 @@ class NavigationService {
         resultPage = HomePage();
         break;
       case Pages.create:
-        resultPage = CereateAdvertPage();
+        resultPage = CreateAdvertPage();
         break;
       case Pages.createVacancy:
         resultPage = CreateVacancyPage();
