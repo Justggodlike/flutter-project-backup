@@ -4,4 +4,5 @@ class Assets {
   static const String profileIcon = 'assets/profile_icon.svg';
   static const String passwordIcon = 'assets/password_icon.svg';
   static const String arrowRight = 'assets/arrow_right.svg';
+  static const String plusIcon = 'assets/plus_icon.svg';
 }
