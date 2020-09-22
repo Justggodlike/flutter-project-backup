@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:help_me/core/common/index.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
+import 'package:help_me/ui/pages/create_advert/summary_page/index.dart';
 import 'package:help_me/ui/pages/create_advert/vacancy_page/index.dart';
 import 'package:help_me/ui/pages/create_advert/work_page/index.dart';
 import 'package:help_me/ui/pages/index.dart';
@@ -41,6 +42,9 @@ class NavigationService {
         break;
       case Pages.createWork:
         resultPage = CreateWorkPage();
+        break;
+      case Pages.createSummary:
+        resultPage = CreateSummaryPage();
         break;
       case Pages.authorization:
         resultPage = AuthorizationPage();

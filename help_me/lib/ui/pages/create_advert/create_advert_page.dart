@@ -48,7 +48,9 @@ class _CreateAdvertPageState extends State<CreateAdvertPage> {
           const SizedBox(height: 15),
           PrimaryButtonWidget(
             text: 'Summary',
-            onPressedFunction: () => {},
+            onPressedFunction: () => {
+              navigationService.navigateTo(Pages.createSummary),
+            },
           ),
         ],
       ),
