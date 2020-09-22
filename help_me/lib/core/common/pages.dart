@@ -4,5 +4,7 @@ enum Pages {
   create,
   profile,
   createVacancy,
+  createWork,
+  createSummary,
   authorization,
 }
