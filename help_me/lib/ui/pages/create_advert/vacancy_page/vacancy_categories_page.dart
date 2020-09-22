@@ -1,19 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/services/index.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
-import 'package:help_me/ui/widgets/button/index.dart';
-import 'package:help_me/ui/widgets/text_filed/index.dart';
 
-class CreateVacancyPage extends StatefulWidget {
+class VacancyCategoriesPage extends StatefulWidget {
   @override
-  _CreateVacancyPageState createState() => _CreateVacancyPageState();
+  _VacancyCategoriesPageState createState() => _VacancyCategoriesPageState();
 }
 
-class _CreateVacancyPageState extends State<CreateVacancyPage> {
+class _VacancyCategoriesPageState extends State<VacancyCategoriesPage> {
   @override
   Widget build(BuildContext context) {
     var localization = I18n.of(context);
@@ -40,26 +36,8 @@ class _CreateVacancyPageState extends State<CreateVacancyPage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Text(
-              localization.enterVacancyName,
+              localization.selectScopeOfEmployment,
               style: Theme.of(context).textTheme.headline6,
-            ),
-            const SizedBox(height: 30),
-            BaseTextFiled(
-              label: 'Enter name',
-            ),
-            Expanded(
-              child: Align(
-                alignment: Alignment.bottomCenter,
-                child: SizedBox(
-                  height: 47.0,
-                  width: 230.0,
-                  child: PrimaryButtonWidget(
-                    text: 'Next',
-                    onPressedFunction: () =>
-                        {navigationService.navigateTo(Pages.vcancyCategories)},
-                  ),
-                ),
-              ),
             ),
           ],
         ),

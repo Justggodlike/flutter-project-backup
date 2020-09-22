@@ -56,6 +56,10 @@ class I18n implements WidgetsLocalizations {
   String get forgotPassword => "Forgot Password";
   /// "Create Advert"
   String get createAdvert => "Create Advert";
+  /// "Enter the vacancy title"
+  String get enterVacancyName => "Enter the vacancy title";
+  /// "Select scope of employment"
+  String get selectScopeOfEmployment => "Select scope of employment";
 }
 
 class _I18n_en_US extends I18n {

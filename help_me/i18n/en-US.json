@@ -10,5 +10,8 @@
     "helpMe": "HelpMe",
     "send": "Send",
     "forgotPassword": "Forgot Password",
-    "createAdvert": "Create Advert"
+    "createAdvert": "Create Advert",
+    "enterVacancyName": "Enter the vacancy title",
+    "selectScopeOfEmployment": "Select scope of employment"
+
 }

@@ -6,5 +6,6 @@ enum Pages {
   createVacancy,
   createWork,
   createSummary,
+  vcancyCategories,
   authorization,
 }

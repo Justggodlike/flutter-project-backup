@@ -49,6 +49,9 @@ class NavigationService {
       case Pages.authorization:
         resultPage = AuthorizationPage();
         break;
+      case Pages.vcancyCategories:
+        resultPage = VacancyCategoriesPage();
+        break;
       default:
         resultPage = AuthorizationPage();
         break;
