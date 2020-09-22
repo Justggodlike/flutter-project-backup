@@ -54,8 +54,8 @@ class I18n implements WidgetsLocalizations {
   String get send => "Send";
   /// "Forgot Password"
   String get forgotPassword => "Forgot Password";
-  /// "Create Aedvert"
-  String get createAdvert => "Create Aedvert";
+  /// "Create Advert"
+  String get createAdvert => "Create Advert";
 }
 
 class _I18n_en_US extends I18n {
