@@ -24,7 +24,7 @@ class _ShellPageState extends State<ShellPage> {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           body: buildBody(model.selectedPage),
           bottomNavigationBar: BottomNavigationWidget(
-            selectedIndex: model.selectedIndex,
+            selectedIndex: model.selectedItemIndex,
             pages: model.pages,
             onTappedFunction: model.onTappedItem,
             orderCount: 3,

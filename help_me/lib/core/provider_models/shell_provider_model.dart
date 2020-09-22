@@ -4,14 +4,16 @@ import 'package:help_me/core/common/index.dart';
 class ShellProviderModel with ChangeNotifier {
   final List<Pages> pages = [
     Pages.home,
+    Pages.create,
+    Pages.profile,
   ];
 
-  int selectedIndex = 0;
+  int selectedItemIndex = 0;
 
-  Pages get selectedPage => pages[selectedIndex];
+  Pages get selectedPage => pages[selectedItemIndex];
 
-  void onTappedIndex(int index) {
-    selectedIndex = index;
+  void onTappedItem(int index) {
+    selectedItemIndex = index;
     notifyListeners();
   }
 }
