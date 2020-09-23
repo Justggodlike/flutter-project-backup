@@ -10,16 +10,16 @@ final List<SphereItemModel> sphereList = [
     'first',
   ),
   SphereItemModel(
-    'first',
+    'Second',
   ),
   SphereItemModel(
-    'first',
+    'Third',
   ),
   SphereItemModel(
-    'first',
+    'Some Scope',
   ),
   SphereItemModel(
-    'first',
+    'Sphere',
   ),
   SphereItemModel(
     'first',
@@ -52,19 +52,22 @@ class _VacancyCategoriesPageState extends State<VacancyCategoriesPage> {
         ],
       ),
       backgroundColor: Color(0xffffffffff),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Text(
-              localization.selectScopeOfEmployment,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            SphereItemsListWidget(
-              itemsList: sphereList,
-            )
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Text(
+                localization.selectScopeOfEmployment,
+                style: Theme.of(context).textTheme.headline6,
+              ),
+              SizedBox(height: 20),
+              SphereItemsListWidget(
+                itemsList: sphereList,
+              )
+            ],
+          ),
         ),
       ),
     );

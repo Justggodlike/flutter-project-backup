@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/core/common/index.dart';
+import 'package:help_me/core/services/index.dart';
 import 'package:help_me/ui/widgets/sphere_list_widget/index.dart';
 
 class SphereItemsListWidget extends StatelessWidget {
@@ -11,12 +13,17 @@ class SphereItemsListWidget extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       padding: const EdgeInsets.all(0),
-      physics: const NeverScrollableScrollPhysics(),
+      physics: BouncingScrollPhysics(),
       itemCount: itemsList.length,
       itemBuilder: (context, index) {
         final item = itemsList[index];
-        return SphereItem(
-          itemModel: item,
+        return InkWell(
+          onTap: () => {
+            navigationService.navigateTo(Pages.finalCreate),
+          },
+          child: SphereItem(
+            itemModel: item,
+          ),
         );
       },
     );

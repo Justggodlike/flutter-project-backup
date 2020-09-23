@@ -7,5 +7,6 @@ enum Pages {
   createWork,
   createSummary,
   vcancyCategories,
+  finalCreate,
   authorization,
 }
