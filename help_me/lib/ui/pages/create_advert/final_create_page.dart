@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/services/index.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
@@ -118,6 +119,13 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
               Text('Some text'),
               BaseTextFiled(
                 label: 'Enter name',
+              ),
+              const SizedBox(height: 30),
+              PrimaryButtonWidget(
+                text: 'Create',
+                onPressedFunction: () => {
+                  navigationService.navigateWithReplacementTo(Pages.shell),
+                },
               ),
             ],
           ),
