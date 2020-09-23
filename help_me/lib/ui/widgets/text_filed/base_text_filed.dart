@@ -9,7 +9,7 @@ class BaseTextFiled extends StatefulWidget {
   final Function(String) onFieldSubmitted;
   final VoidCallback onTap;
   final String errorText;
-  final String label;
+  //final String label;
   final String hint;
 
   const BaseTextFiled({
@@ -21,7 +21,6 @@ class BaseTextFiled extends StatefulWidget {
     this.onFieldSubmitted,
     this.onTap,
     this.errorText,
-    this.label,
     this.hint,
   }) : super(key: key);
 
@@ -40,13 +39,10 @@ class _BaseTextFiledState extends State<BaseTextFiled> {
         onSaved: widget.onSaved,
         onFieldSubmitted: widget.onFieldSubmitted,
         onTap: widget.onTap,
+        keyboardType: TextInputType.multiline,
         decoration: InputDecoration(
           fillColor: Color.fromARGB(255, 235, 240, 245),
           filled: true,
-          hintStyle: TextStyle(
-            fontSize: 18,
-            color: Color.fromARGB(255, 235, 243, 245),
-          ),
           hintText: widget.hint,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -57,7 +53,7 @@ class _BaseTextFiledState extends State<BaseTextFiled> {
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
             borderSide: BorderSide(
-              color: Colors.green,
+              color: Color.fromARGB(255, 235, 243, 245),
             ),
           ),
           focusedBorder: OutlineInputBorder(
@@ -66,9 +62,6 @@ class _BaseTextFiledState extends State<BaseTextFiled> {
               color: Colors.lightBlue,
             ),
           ),
-          contentPadding: EdgeInsets.symmetric(horizontal: 20),
-          errorText: widget.errorText,
-          labelText: widget.label,
         ),
       ),
     );

@@ -56,22 +56,22 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
               const SizedBox(height: 40),
               Text('Some text'),
               BaseTextFiled(
-                label: 'Enter name',
+                hint: 'Enter name',
               ),
               const SizedBox(height: 20),
               Text('Some text'),
               BaseTextFiled(
-                label: 'Enter name',
+                hint: 'Enter name',
               ),
               const SizedBox(height: 20),
               Text('Some text'),
               BaseTextFiled(
-                label: 'Enter name',
+                hint: 'Enter name',
               ),
               const SizedBox(height: 20),
               Text('Some text'),
               BaseTextFiled(
-                label: 'Enter name',
+                hint: 'Enter name',
               ),
               const SizedBox(height: 20),
               Row(
@@ -80,12 +80,10 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
                     onTap: () => {
                       _showImagePicker(context),
                     },
-                    child: CircleAvatar(
-                      radius: 55,
-                      backgroundColor: Color(0xffFDCF09),
+                    child: Container(
                       child: _image != null
                           ? ClipRRect(
-                              borderRadius: BorderRadius.circular(50),
+                              borderRadius: BorderRadius.circular(10),
                               child: Image.file(
                                 _image,
                                 width: 100,
@@ -96,7 +94,7 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
                           : Container(
                               decoration: BoxDecoration(
                                   color: Colors.grey[200],
-                                  borderRadius: BorderRadius.circular(50)),
+                                  borderRadius: BorderRadius.circular(10)),
                               width: 100,
                               height: 100,
                               child: Icon(
@@ -117,9 +115,7 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
               ),
               const SizedBox(height: 20),
               Text('Some text'),
-              BaseTextFiled(
-                label: 'Enter name',
-              ),
+              DescriptionTextFiled(hintText: 'Description'),
               const SizedBox(height: 30),
               PrimaryButtonWidget(
                 text: 'Create',

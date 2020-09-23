@@ -45,7 +45,7 @@ class _CreateVacancyPageState extends State<CreateVacancyPage> {
             ),
             const SizedBox(height: 30),
             BaseTextFiled(
-              label: 'Enter name',
+              hint: 'Enter name',
             ),
             Expanded(
               child: Align(
