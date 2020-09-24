@@ -11,6 +11,10 @@ class StandardAdvert extends StatefulWidget {
 }
 
 class _StandardAdvertState extends State<StandardAdvert> {
+  String title = '"Le Italia"';
+  String subtitle = 'Pizza by very comforAdvert price.';
+  Image image = Image.asset('assets/preview.jpg', height: 80, width: 80,);
+  String price = '4.00\$';
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +51,7 @@ class _StandardAdvertState extends State<StandardAdvert> {
                       height: 80,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20.0),
-                        child: Image.asset('assets/preview.jpg', height: 80, width: 80,),
+                        child: image,
                       ),
                     ),
                     SizedBox(width: 10),
@@ -59,7 +63,7 @@ class _StandardAdvertState extends State<StandardAdvert> {
                             alignment: Alignment.topLeft,
                             child: Container(
                               child: Text(
-                                '"Le Italia"',
+                                title,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w500,
@@ -73,7 +77,7 @@ class _StandardAdvertState extends State<StandardAdvert> {
                             alignment: Alignment.topLeft,
                             child: Container(
                               child: Text(
-                                'Pizza by very comforAdvert price.',
+                                subtitle,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w500,
@@ -86,7 +90,7 @@ class _StandardAdvertState extends State<StandardAdvert> {
                             alignment: Alignment.topRight,
                             child: Container(
                               child: Text(
-                                '4.00\$',
+                                price,
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.w800,
