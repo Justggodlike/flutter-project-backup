@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:help_me/generated/i18n.dart';
 
 class SecondaryButtonWidget extends StatelessWidget {
   final Color buttonColor;

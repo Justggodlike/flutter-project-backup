@@ -4,7 +4,6 @@ import 'package:help_me/core/services/index.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
 import 'package:help_me/ui/widgets/button/index.dart';
-import 'package:help_me/ui/widgets/button/primary_button_widget.dart';
 import 'package:help_me/ui/widgets/menu/index.dart';
 import 'package:help_me/ui/widgets/profile/index.dart';
 
@@ -38,7 +37,7 @@ class ProfilePage extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -46,6 +45,7 @@ class ProfilePage extends StatelessWidget {
               localization.profile,
               style: Theme.of(context).textTheme.headline6,
             ),
+            SizedBox(height: 10),
             Row(
               children: [
                 ProfileAvatar(

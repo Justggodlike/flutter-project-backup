@@ -4,7 +4,6 @@ import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/services/dependency_service.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/widgets/button/index.dart';
-import 'package:help_me/ui/widgets/text_filed/index.dart';
 
 class CreateAdvertPage extends StatefulWidget {
   @override
@@ -17,7 +16,7 @@ class _CreateAdvertPageState extends State<CreateAdvertPage> {
     var localization = I18n.of(context);
 
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
@@ -25,13 +24,7 @@ class _CreateAdvertPageState extends State<CreateAdvertPage> {
             localization.createAdvert,
             style: Theme.of(context).textTheme.headline6,
           ),
-          const SizedBox(height: 30),
-          // Center(
-          //   child: BaseTextFiled(
-          //     label: 'Name',
-          //   ),
-          // ),
-          const SizedBox(height: 30),
+          const SizedBox(height: 60),
           PrimaryButtonWidget(
             text: 'Vacancy',
             onPressedFunction: () => {
