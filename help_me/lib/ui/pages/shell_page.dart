@@ -3,6 +3,7 @@ import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/provider_models/index.dart';
 import 'package:help_me/ui/notify_provider_widget.dart';
 import 'package:help_me/ui/pages/index.dart';
+import 'package:help_me/ui/pages/profile_page/index.dart';
 import 'package:help_me/ui/widgets/bottom_navigation_bar/index.dart';
 
 class ShellPage extends StatefulWidget {
@@ -18,10 +19,10 @@ class _ShellPageState extends State<ShellPage> {
       builder: (context, model, child) {
         return Scaffold(
           appBar: AppBar(
-            backgroundColor: Color(0xffffffff),
+            backgroundColor: Color.fromARGB(255, 245, 245, 245),
             elevation: 0,
           ),
-          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          backgroundColor: Color.fromARGB(255, 245, 245, 245),
           body: buildBody(model.selectedPage),
           bottomNavigationBar: BottomNavigationWidget(
             selectedIndex: model.selectedItemIndex,
@@ -40,6 +41,8 @@ class _ShellPageState extends State<ShellPage> {
         return HomePage();
       case Pages.create:
         return CreateAdvertPage();
+      case Pages.profile:
+        return ProfilePage();
       default:
         return HomePage();
     }
