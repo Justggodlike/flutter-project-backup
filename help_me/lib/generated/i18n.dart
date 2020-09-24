@@ -62,6 +62,8 @@ class I18n implements WidgetsLocalizations {
   String get selectScopeOfEmployment => "Select scope of employment";
   /// "Profile"
   String get profile => "Profile";
+  /// "Log Out"
+  String get logOut => "Log Out";
 }
 
 class _I18n_en_US extends I18n {

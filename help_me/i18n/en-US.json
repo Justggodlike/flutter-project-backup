@@ -13,5 +13,6 @@
     "createAdvert": "Create Advert",
     "enterVacancyName": "Enter the vacancy title",
     "selectScopeOfEmployment": "Select scope of employment",
-    "profile": "Profile"
+    "profile": "Profile",
+    "logOut": "Log Out"
 }
