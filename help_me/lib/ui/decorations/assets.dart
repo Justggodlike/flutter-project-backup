@@ -7,4 +7,5 @@ class Assets {
   static const String plusIcon = 'assets/plus_icon.svg';
   static const String closeIcon = 'assets/close_icon.svg';
   static const String avatar = 'assets/avatar.png';
+  static const String logOutIcon = 'assets/logout_icon.svg';
 }

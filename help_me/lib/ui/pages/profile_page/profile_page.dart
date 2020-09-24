@@ -3,6 +3,7 @@ import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/services/index.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
+import 'package:help_me/ui/widgets/button/index.dart';
 import 'package:help_me/ui/widgets/button/primary_button_widget.dart';
 import 'package:help_me/ui/widgets/menu/index.dart';
 import 'package:help_me/ui/widgets/profile/index.dart';
@@ -79,6 +80,19 @@ class ProfilePage extends StatelessWidget {
               itemsList: menuItems,
             ),
             SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SecondaryButtonWidget(
+                  iconPath: Assets.logOutIcon,
+                  text: localization.logOut,
+                  onPressedFunction: () => {
+                    navigationService
+                        .navigateWithReplacementTo(Pages.authorization),
+                  },
+                ),
+              ],
+            ),
           ],
         ),
       ),
