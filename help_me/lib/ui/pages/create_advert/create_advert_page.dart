@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/services/dependency_service.dart';
 import 'package:help_me/generated/i18n.dart';
@@ -45,6 +46,11 @@ class _CreateAdvertPageState extends State<CreateAdvertPage> {
               navigationService.navigateTo(Pages.createSummary),
             },
           ),
+          SizedBox(height: 10),
+          Container(
+              height: 270,
+              width: 270,
+              child: SvgPicture.asset('assets/owl_image.svg')),
         ],
       ),
     );
