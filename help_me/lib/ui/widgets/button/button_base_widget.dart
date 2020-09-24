@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 class ButtonBaseWidget extends StatelessWidget {
   final Color buttonColor;
   final Color textColor;
+  final Color blurColor;
   final String text;
   final String assetsIcon;
   final bool isDisabled;
@@ -16,12 +17,21 @@ class ButtonBaseWidget extends StatelessWidget {
     @required this.text,
     @required this.onPressed,
     @required this.assetsIcon,
+    @required this.blurColor,
     this.isDisabled = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 10,
+            color: blurColor,
+          ),
+        ],
+      ),
       child: CupertinoButton(
         padding: EdgeInsets.all(8.0),
         borderRadius: BorderRadius.circular(8.0),

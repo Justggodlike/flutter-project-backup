@@ -14,6 +14,7 @@ class PrimaryButtonWidget extends ButtonBaseWidget {
           assetsIcon: assetIconPath,
           buttonColor: Color(0xFFFF6969),
           textColor: Color(0xffffffff),
+          blurColor: Color(0xFFFF6969),
           onPressed: onPressedFunction,
           isDisabled: isDisabled,
         );
