@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:help_me/ui/widgets/advert/index.dart';
+import 'package:help_me/ui/widgets/advert_list/index.dart';
 
 class LazyLoadingPage extends StatefulWidget {
   @override
@@ -26,7 +26,9 @@ class _LazyLoadingPageState extends State<LazyLoadingPage> {
 
   _getMoreData() {
     for (int i = _currentMax; i < _currentMax + 10; i++) {
-      itemsList.add(StandardAdvert());
+      itemsList.add(
+        StandardAdvert(),
+      );
     }
 
     _currentMax = _currentMax + 10;
@@ -37,15 +39,15 @@ class _LazyLoadingPageState extends State<LazyLoadingPage> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-        controller: _scrollController,
-        itemExtent: 170,
-        itemBuilder: (context, i) {
-          if (i == itemsList.length) {
-            return CupertinoActivityIndicator();
-          }
-          return itemsList[i];
-        },
-        itemCount: itemsList.length + 1,
-      );
+      controller: _scrollController,
+      itemExtent: 170,
+      itemBuilder: (context, i) {
+        if (i == itemsList.length) {
+          return CupertinoActivityIndicator();
+        }
+        return itemsList[i];
+      },
+      itemCount: itemsList.length + 1,
+    );
   }
 }

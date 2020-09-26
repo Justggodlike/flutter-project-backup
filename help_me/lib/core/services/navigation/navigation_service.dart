@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'package:help_me/core/common/index.dart';
+import 'package:help_me/ui/pages/advertpage/index.dart';
 import 'package:help_me/ui/pages/authorization/index.dart';
 import 'package:help_me/ui/pages/create_advert/index.dart';
 import 'package:help_me/ui/pages/create_advert/summary_page/index.dart';
@@ -59,6 +60,9 @@ class NavigationService {
         break;
       case Pages.profile:
         resultPage = ProfilePage();
+        break;
+      case Pages.advert:
+        resultPage = AdvertPage();
         break;
       default:
         resultPage = AuthorizationPage();

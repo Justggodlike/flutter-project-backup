@@ -9,4 +9,5 @@ enum Pages {
   vcancyCategories,
   finalCreate,
   authorization,
+  advert,
 }
