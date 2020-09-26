@@ -32,19 +32,7 @@ class _AdvertPageState extends State<AdvertPage> {
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           children: <Widget>[
-            SizedBox(
-              height: 200,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: ImageCarousel(),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            ImageCarousel(),
             SizedBox(
               height: 40,
               child: Row(
@@ -82,6 +70,7 @@ class _AdvertPageState extends State<AdvertPage> {
                     maxLines: 10,
                     style: new TextStyle(
                       fontSize: 20.0,
+                      fontFamily: 'Montserrat',
                     ),
                   ),
                 ),

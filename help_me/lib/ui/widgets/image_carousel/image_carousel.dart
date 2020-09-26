@@ -8,7 +8,6 @@ class ImageCarousel extends StatefulWidget {
 }
 
 class _ImageCarouselState extends State<ImageCarousel> {
-
   @override
   void initState() {
     super.initState();
@@ -20,18 +19,15 @@ class _ImageCarouselState extends State<ImageCarousel> {
       items: [
         Image.asset(
           'assets/carousel-1.jpg',
-
         ),
         Image.asset(
           'assets/carousel-2.png',
-
-        ),Image.asset(
+        ),
+        Image.asset(
           'assets/carousel-3.jpg',
-
         ),
         Image.asset(
           'assets/carousel-4.jpg',
-
         ),
       ],
       options: CarouselOptions(
@@ -41,10 +37,6 @@ class _ImageCarouselState extends State<ImageCarousel> {
         initialPage: 0,
         enableInfiniteScroll: true,
         reverse: false,
-        autoPlay: true,
-        autoPlayInterval: Duration(seconds: 5),
-        autoPlayAnimationDuration: Duration(milliseconds: 800),
-        autoPlayCurve: Curves.fastOutSlowIn,
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
       ),
