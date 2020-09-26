@@ -1,53 +1,57 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:help_me/ui/widgets/advert_list/index.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:help_me/ui/widgets/advert_list/index.dart';
 
-class LazyLoadingPage extends StatefulWidget {
-  @override
-  _LazyLoadingPageState createState() => _LazyLoadingPageState();
-}
+//==================================//
+// That class will be use later
+//==================================//
 
-class _LazyLoadingPageState extends State<LazyLoadingPage> {
-  ScrollController _scrollController = ScrollController();
-  int _currentMax = 10;
-  List itemsList;
+// class LazyLoadingPage extends StatefulWidget {
+//   @override
+//   _LazyLoadingPageState createState() => _LazyLoadingPageState();
+// }
 
-  @override
-  void initState() {
-    super.initState();
-    itemsList = List.generate(10, (i) => StandardAdvert());
-    _scrollController.addListener(() {
-      if (_scrollController.position.pixels ==
-          _scrollController.position.maxScrollExtent) {
-        _getMoreData();
-      }
-    });
-  }
+// class _LazyLoadingPageState extends State<LazyLoadingPage> {
+//   ScrollController _scrollController = ScrollController();
+//   int _currentMax = 10;
+//   List itemsList;
 
-  _getMoreData() {
-    for (int i = _currentMax; i < _currentMax + 10; i++) {
-      itemsList.add(
-        StandardAdvert(),
-      );
-    }
+//   @override
+//   void initState() {
+//     super.initState();
+//     itemsList = List.generate(10, (i) => StandardAdvert());
+//     _scrollController.addListener(() {
+//       if (_scrollController.position.pixels ==
+//           _scrollController.position.maxScrollExtent) {
+//         _getMoreData();
+//       }
+//     });
+//   }
 
-    _currentMax = _currentMax + 10;
+//   _getMoreData() {
+//     for (int i = _currentMax; i < _currentMax + 10; i++) {
+//       itemsList.add(
+//         StandardAdvert(),
+//       );
+//     }
 
-    setState(() {});
-  }
+//     _currentMax = _currentMax + 10;
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      controller: _scrollController,
-      itemExtent: 170,
-      itemBuilder: (context, i) {
-        if (i == itemsList.length) {
-          return CupertinoActivityIndicator();
-        }
-        return itemsList[i];
-      },
-      itemCount: itemsList.length + 1,
-    );
-  }
-}
+//     setState(() {});
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView.builder(
+//       controller: _scrollController,
+//       itemExtent: 170,
+//       itemBuilder: (context, i) {
+//         if (i == itemsList.length) {
+//           return CupertinoActivityIndicator();
+//         }
+//         return itemsList[i];
+//       },
+//       itemCount: itemsList.length + 1,
+//     );
+//   }
+// }
