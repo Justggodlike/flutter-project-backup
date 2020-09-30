@@ -24,13 +24,18 @@ class _ShellPageState extends State<ShellPage> {
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(40.0), // here the desired height
             child: AppBar(
-              backgroundColor: Color.fromARGB(255, 245, 245, 245),
+              backgroundColor: Color.fromARGB(205, 245, 245, 245),
               elevation: 0,
               actions: [
                 _buildAction(
                   imageAssetPath: Assets.messageIcon,
                   onIconPressedFuction: () {}, //TODO get from provider
                   badgeValue: 5, //TODO get from provider
+                ),
+                _buildAction(
+                  imageAssetPath: Assets.searchIcon,
+                  onIconPressedFuction: () {}, //TODO create search method
+                  badgeValue: 0,
                 ),
               ],
             ),
@@ -53,13 +58,18 @@ class _ShellPageState extends State<ShellPage> {
     Function onIconPressedFuction,
     int badgeValue,
   }) {
-    return IconButton(
-      icon: IconWithBageWidget(
-        badgeValue: badgeValue,
-        badgeTextStyle: Theme.of(context).textTheme.overline,
-        icon: SvgPicture.asset(imageAssetPath),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 3.0, horizontal: 3.0),
+      child: IconButton(
+        icon: IconWithBageWidget(
+          badgeValue: badgeValue,
+          badgeTextStyle: Theme.of(context).textTheme.overline,
+          icon: SvgPicture.asset(imageAssetPath),
+        ),
+        splashRadius: 16,
+        splashColor: Colors.pink[200],
+        onPressed: onIconPressedFuction,
       ),
-      onPressed: onIconPressedFuction,
     );
   }
 

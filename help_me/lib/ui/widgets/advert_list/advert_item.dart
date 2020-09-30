@@ -26,16 +26,12 @@ class AdvertItem extends StatelessWidget {
             height: 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-              gradient: LinearGradient(colors: [
-                Colors.white,
-                Colors.white,
-              ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+              color: Color.fromARGB(255, 242, 242, 242),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey,
-                  blurRadius: 12,
-                  offset: Offset(0, 6),
+                  color: Colors.blueGrey,
+                  blurRadius: 10,
+                  offset: Offset(0, 3),
                 ),
               ],
             ),
@@ -97,7 +93,7 @@ class AdvertItem extends StatelessWidget {
                           child: Text(
                             location,
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Colors.black38,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -111,7 +107,7 @@ class AdvertItem extends StatelessWidget {
                               child: Text(
                                 dateOfCreation,
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: Colors.black38,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),

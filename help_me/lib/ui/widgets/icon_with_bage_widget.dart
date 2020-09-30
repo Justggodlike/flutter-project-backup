@@ -20,11 +20,11 @@ class IconWithBageWidget extends Badge {
             textAlign: TextAlign.center,
           ),
           position:
-              badgePosition ?? BadgePosition.bottomStart(bottom: 10, start: 18),
+              badgePosition ?? BadgePosition.bottomStart(bottom: 9, start: 15),
           shape: BadgeShape.square,
           borderRadius: 10.0,
           elevation: 1.0,
-          badgeColor: Colors.red,
+          badgeColor: Colors.red[300],
           animationType: BadgeAnimationType.scale,
           showBadge: badgeValue != 0,
           padding: const EdgeInsets.fromLTRB(
