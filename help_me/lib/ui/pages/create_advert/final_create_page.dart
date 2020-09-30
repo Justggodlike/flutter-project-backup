@@ -4,9 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:help_me/core/common/index.dart';
+import 'package:help_me/core/const_for_list_widgets/index.dart';
 import 'package:help_me/core/services/index.dart';
 import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/index.dart';
+import 'package:help_me/ui/widgets/bottom_list/index.dart';
 import 'package:help_me/ui/widgets/button/index.dart';
 import 'package:help_me/ui/widgets/text_filed/index.dart';
 import 'package:image_picker/image_picker.dart';
@@ -16,13 +18,17 @@ class FinalCreatePage extends StatefulWidget {
   _FianlCreatePageSate createState() => _FianlCreatePageSate();
 }
 
+TextEditingController _textFiledValueController = TextEditingController();
+ListForBottomListWidget _list =
+    new ListForBottomListWidget(); //TODO: так бляд делать нельзя рома убери это нах1й от сюда!! где-то всплакнул один оопэшник :(
+
 class _FianlCreatePageSate extends State<FinalCreatePage> {
   File _image;
-  TextEditingController _textFiledValueController;
 
   @override
   Widget build(BuildContext context) {
     var localization = I18n.of(context);
+    ListForBottomListWidget list = new ListForBottomListWidget();
 
     return Scaffold(
       appBar: PreferredSize(
@@ -205,23 +211,8 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
                     )
                   ],
                 ),
-                new ListTile(
-                  title: new Text('No Reason'),
-                  onTap: () {
-                    _textFiledValueController.text = 'asdf';
-                  },
-                ),
-                new ListTile(
-                  title: new Text('1 day'),
-                ),
-                new ListTile(
-                  title: new Text('2 day'),
-                ),
-                new ListTile(
-                  title: new Text('3 day'),
-                ),
-                new ListTile(
-                  title: new Text('Part-time work'),
+                BottomListWidget(
+                  itemsList: [_list.getItems()],
                 ),
               ],
             ),
