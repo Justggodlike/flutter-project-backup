@@ -13,10 +13,10 @@ import 'package:image_picker/image_picker.dart';
 
 class FinalCreatePage extends StatefulWidget {
   @override
-  _FianlCreatePageSate createState() => _FianlCreatePageSate();
+  _FinalCreatePageSate createState() => _FinalCreatePageSate();
 }
 
-class _FianlCreatePageSate extends State<FinalCreatePage> {
+class _FinalCreatePageSate extends State<FinalCreatePage> {
   File _image;
 
   @override

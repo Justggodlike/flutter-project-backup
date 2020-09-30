@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:help_me/core/common/index.dart';
+import 'package:help_me/core/services/index.dart';
 import 'package:help_me/ui/widgets/advert_list/advert_item_model.dart';
 import 'package:help_me/ui/widgets/advert_list/index.dart';
 
@@ -21,7 +23,7 @@ class AdvertListWidget extends StatelessWidget {
         final item = itemsList[index];
         return InkWell(
           onTap: () => {
-            //navigationService.navigateTo(Pages.finalCreate),
+            navigationService.navigateTo(Pages.advert),
           },
           child: AdvertItem(
             title: item.nameAdvert,

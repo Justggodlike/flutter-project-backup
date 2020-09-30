@@ -28,82 +28,84 @@ class _AdvertPageState extends State<AdvertPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-        child: Column(
-          children: <Widget>[
-            ImageCarousel(),
-            SizedBox(
-              height: 40,
-              child: Row(
+      body: SingleChildScrollView(
+              child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
+            children: <Widget>[
+              ImageCarousel(),
+              SizedBox(
+                height: 40,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: Text(
+                        location,
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontFamily: 'Montserrat',
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Align(
+                        alignment: Alignment.centerRight,
+                        child: Text(
+                          price,
+                          style: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Row(
                 children: <Widget>[
-                  Expanded(
+                  Flexible(
                     child: Text(
-                      location,
-                      style: TextStyle(
-                        fontSize: 12,
+                      description,
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 10,
+                      style: new TextStyle(
+                        fontSize: 20.0,
                         fontFamily: 'Montserrat',
                       ),
                     ),
                   ),
-                  Expanded(
-                    child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Text(
-                        price,
-                        style: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
+                ],
+              ),
+              SizedBox(
+                height: 40,
+                child: Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          child:
+                              const Text('call', style: TextStyle(fontSize: 20)),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            Row(
-              children: <Widget>[
-                Flexible(
-                  child: Text(
-                    description,
-                    overflow: TextOverflow.ellipsis,
-                    maxLines: 10,
-                    style: new TextStyle(
-                      fontSize: 20.0,
-                      fontFamily: 'Montserrat',
+                    Expanded(
+                      child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: RaisedButton(
+                          onPressed: () {},
+                          child: const Text('message',
+                              style: TextStyle(fontSize: 20)),
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 40,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: RaisedButton(
-                        onPressed: () {},
-                        child:
-                            const Text('call', style: TextStyle(fontSize: 20)),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: RaisedButton(
-                        onPressed: () {},
-                        child: const Text('message',
-                            style: TextStyle(fontSize: 20)),
-                      ),
-                    ),
-                  ),
-                ],
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

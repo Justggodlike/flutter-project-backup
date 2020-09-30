@@ -14,5 +14,6 @@
     "enterVacancyName": "Enter the vacancy title",
     "selectScopeOfEmployment": "Select scope of employment",
     "profile": "Profile",
-    "logOut": "Log Out"
+    "logOut": "Log Out",
+    "enterWorkName": "Enter work name"
 }

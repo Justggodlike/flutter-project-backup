@@ -55,6 +55,9 @@ class NavigationService {
       case Pages.vcancyCategories:
         resultPage = VacancyCategoriesPage();
         break;
+      case Pages.workCategories:
+        resultPage = WorkCategoriesPage();
+        break;
       case Pages.finalCreate:
         resultPage = FinalCreatePage();
         break;
