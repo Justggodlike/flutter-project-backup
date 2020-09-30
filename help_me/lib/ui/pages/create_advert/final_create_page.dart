@@ -18,6 +18,7 @@ class FinalCreatePage extends StatefulWidget {
 
 class _FianlCreatePageSate extends State<FinalCreatePage> {
   File _image;
+  TextEditingController _textFiledValueController;
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +57,8 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
               const SizedBox(height: 40),
               Text('Some text'),
               BaseTextFiled(
+                controller: _textFiledValueController,
+                onTap: () => _showPicker(context),
                 hint: 'Enter name',
               ),
               const SizedBox(height: 20),
@@ -170,6 +173,55 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
                     _imgFromCamera();
                     Navigator.of(context).pop();
                   },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showPicker(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext bc) {
+        return SafeArea(
+          child: Container(
+            child: new Wrap(
+              children: <Widget>[
+                Row(
+                  children: [
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: IconButton(
+                        icon: SvgPicture.asset(
+                          Assets.closeIcon,
+                          color: Colors.red,
+                          height: 18.0,
+                        ),
+                        onPressed: () => navigationService.goBack(),
+                      ),
+                    )
+                  ],
+                ),
+                new ListTile(
+                  title: new Text('No Reason'),
+                  onTap: () {
+                    _textFiledValueController.text = 'asdf';
+                  },
+                ),
+                new ListTile(
+                  title: new Text('1 day'),
+                ),
+                new ListTile(
+                  title: new Text('2 day'),
+                ),
+                new ListTile(
+                  title: new Text('3 day'),
+                ),
+                new ListTile(
+                  title: new Text('Part-time work'),
                 ),
               ],
             ),
