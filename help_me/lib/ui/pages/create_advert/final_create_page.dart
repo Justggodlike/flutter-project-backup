@@ -21,6 +21,13 @@ class FinalCreatePage extends StatefulWidget {
 TextEditingController _textFiledValueController = TextEditingController();
 ListForBottomListWidget _list =
     new ListForBottomListWidget(); //TODO: так бляд делать нельзя рома убери это нах1й от сюда!! где-то всплакнул один оопэшник :(
+final List<BottomListItemModel> itmesList = [
+  BottomListItemModel(title: 'No reason'),
+  BottomListItemModel(title: 'Part time'),
+  BottomListItemModel(title: 'Free schedule'),
+  BottomListItemModel(title: 'Remote work'),
+  BottomListItemModel(title: 'Half a day'),
+];
 
 class _FianlCreatePageSate extends State<FinalCreatePage> {
   File _image;
@@ -64,7 +71,7 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
               Text('Some text'),
               BaseTextFiled(
                 controller: _textFiledValueController,
-                onTap: () => _showPicker(context),
+                onTap: () => _showPicker(context, 'Work schedule'),
                 hint: 'Enter name',
               ),
               const SizedBox(height: 20),
@@ -188,35 +195,15 @@ class _FianlCreatePageSate extends State<FinalCreatePage> {
     );
   }
 
-  void _showPicker(BuildContext context) {
+  void _showPicker(BuildContext context, String listTitle) {
     showModalBottomSheet(
+      backgroundColor: Colors.transparent,
       context: context,
       builder: (BuildContext bc) {
-        return SafeArea(
-          child: Container(
-            child: new Wrap(
-              children: <Widget>[
-                Row(
-                  children: [
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: IconButton(
-                        icon: SvgPicture.asset(
-                          Assets.closeIcon,
-                          color: Colors.red,
-                          height: 18.0,
-                        ),
-                        onPressed: () => navigationService.goBack(),
-                      ),
-                    )
-                  ],
-                ),
-                BottomListWidget(
-                  itemsList: [_list.getItems()],
-                ),
-              ],
-            ),
-          ),
+        return BottomListWidget(
+          listTitle: listTitle,
+          itemsList: _list.getItems(),
+          textFiledValueController: _textFiledValueController,
         );
       },
     );
