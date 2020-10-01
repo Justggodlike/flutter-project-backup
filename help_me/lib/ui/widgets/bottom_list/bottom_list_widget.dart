@@ -16,60 +16,62 @@ class BottomListWidget extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(
-          top: Radius.circular(30),
+    return SingleChildScrollView(
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(30),
+          ),
         ),
-      ),
-      child: Wrap(
-        children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(width: 24.0), //TODO repalce that bad code
-              Spacer(), //TODO repalce that bad code
-              Text(listTitle, style: TextStyle(fontWeight: FontWeight.bold)),
-              Spacer(), //TODO repalce that bad code
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: IconButton(
-                  icon: SvgPicture.asset(
-                    Assets.closeIcon,
-                    color: Colors.red,
-                    height: 16.0,
+        child: Wrap(
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(width: 24.0), //TODO repalce that bad code
+                Spacer(), //TODO repalce that bad code
+                Text(listTitle, style: TextStyle(fontWeight: FontWeight.bold)),
+                Spacer(), //TODO repalce that bad code
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: IconButton(
+                    icon: SvgPicture.asset(
+                      Assets.closeIcon,
+                      color: Colors.red,
+                      height: 16.0,
+                    ),
+                    onPressed: () => navigationService.goBack(),
                   ),
-                  onPressed: () => navigationService.goBack(),
-                ),
-              )
-            ],
-          ),
-          ListView.separated(
-            shrinkWrap: true,
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            physics: BouncingScrollPhysics(),
-            itemCount: itemsList.length,
-            itemBuilder: (context, index) {
-              final item = itemsList[index];
-              return BottomListItem(
-                title: item.title,
-                onTap: () {
-                  var newValue = textFiledValueController.value.copyWith(
-                    text: item.title,
-                  );
-                  textFiledValueController.value = newValue;
-                  navigationService.goBack();
-                },
-              );
-            },
-            separatorBuilder: (BuildContext context, int index) {
-              return SizedBox(
-                height: 1,
-              );
-            },
-          ),
-        ],
+                )
+              ],
+            ),
+            ListView.separated(
+              shrinkWrap: true,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              physics: BouncingScrollPhysics(),
+              itemCount: itemsList.length,
+              itemBuilder: (context, index) {
+                final item = itemsList[index];
+                return BottomListItem(
+                  title: item.title,
+                  onTap: () {
+                    var newValue = textFiledValueController.value.copyWith(
+                      text: item.title,
+                    );
+                    textFiledValueController.value = newValue;
+                    navigationService.goBack();
+                  },
+                );
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return SizedBox(
+                  height: 1,
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
