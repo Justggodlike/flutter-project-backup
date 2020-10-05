@@ -9,6 +9,7 @@ import 'package:help_me/ui/pages/create_advert/vacancy_page/index.dart';
 import 'package:help_me/ui/pages/create_advert/work_page/index.dart';
 import 'package:help_me/ui/pages/index.dart';
 import 'package:help_me/ui/pages/profile_page/index.dart';
+import 'package:help_me/ui/pages/searchpage/index.dart';
 
 class NavigationService {
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
@@ -60,6 +61,9 @@ class NavigationService {
         break;
       case Pages.finalCreate:
         resultPage = FinalCreatePage();
+        break;
+      case Pages.search:
+        resultPage = SearchPage();
         break;
       case Pages.profile:
         resultPage = ProfilePage();

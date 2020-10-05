@@ -7,6 +7,7 @@ class AuthTextFiled extends StatelessWidget {
   final String assetIconPath;
   final TextInputType keyboardType;
   final bool obscureText;
+  final Function(String) validator;
 
   AuthTextFiled({
     this.textController,
@@ -14,11 +15,13 @@ class AuthTextFiled extends StatelessWidget {
     this.assetIconPath = '',
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: validator,
       controller: textController,
       keyboardType: keyboardType,
       obscureText: obscureText,

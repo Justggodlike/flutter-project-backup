@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:help_me/core/common/index.dart';
 import 'package:help_me/core/provider_models/index.dart';
+import 'package:help_me/core/services/index.dart';
 import 'package:help_me/ui/decorations/index.dart';
 import 'package:help_me/ui/notify_provider_widget.dart';
 import 'package:help_me/ui/pages/index.dart';
@@ -34,7 +35,7 @@ class _ShellPageState extends State<ShellPage> {
                 ),
                 _buildAction(
                   imageAssetPath: Assets.searchIcon,
-                  onIconPressedFuction: () {}, //TODO create search method
+                  onIconPressedFuction: () => {navigationService.navigateTo(Pages.search)}, //TODO create search method
                   badgeValue: 0,
                 ),
               ],

@@ -11,4 +11,5 @@ enum Pages {
   finalCreate,
   authorization,
   advert,
+  search,
 }

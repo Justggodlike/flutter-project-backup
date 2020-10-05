@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flare_splash_screen/flare_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:help_me/ui/decorations/assets.dart';
@@ -5,8 +6,10 @@ import 'package:help_me/ui/pages/authorization/authorization_page.dart';
 import 'core/services/index.dart';
 import 'generated/i18n.dart';
 
-void main() {
+void main() async {
   DependencyService.registerDependencies();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

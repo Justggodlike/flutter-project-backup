@@ -36,7 +36,7 @@ class AdvertItem extends StatelessWidget {
               ],
             ),
           ),
-          Positioned.fill(
+          /*Positioned.fill(
             child: Row(
               children: <Widget>[
                 SizedBox(width: 10),
@@ -122,7 +122,7 @@ class AdvertItem extends StatelessWidget {
                 SizedBox(width: 5),
               ],
             ),
-          ),
+          ),*/
         ],
       ),
     );
