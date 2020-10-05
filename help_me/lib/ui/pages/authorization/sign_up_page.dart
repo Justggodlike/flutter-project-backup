@@ -33,10 +33,12 @@ class _SignUpPageState extends State<SignUpPage> {
               children: <Widget>[
                 AuthTextFiled(
                   validator: (val) {
-                    return val.isEmpty || val.length < 3
-                        ? "Enter Username 3+ characters"
-                        : null;
-                  },
+                    return RegExp(
+                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            .hasMatch(val)
+                        ? null
+                        : "Enter correct email";
+                  }, //TODO я это у индуса спиздил надо разобраться как работает
                   textController: emailController,
                   labelText: localization.email,
                   keyboardType: TextInputType.emailAddress,
@@ -44,12 +46,10 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 AuthTextFiled(
                   validator: (val) {
-                    return RegExp(
-                                r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                            .hasMatch(val)
-                        ? null
-                        : "Enter correct email";
-                  }, //TODO я это у индуса спиздил надо разобраться как работает
+                    return val.isEmpty || val.length < 3
+                        ? "Enter Username 3+ characters"
+                        : null;
+                  },
                   textController: userNameController,
                   labelText: localization.username,
                   assetIconPath: Assets.profileIcon,
