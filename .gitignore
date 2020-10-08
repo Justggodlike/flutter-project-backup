@@ -102,3 +102,4 @@ dist
 
 # TernJS port file
 .tern-port
+help_me/ios/Runner/GoogleService-Info.plist
