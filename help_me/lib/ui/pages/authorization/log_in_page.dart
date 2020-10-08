@@ -14,20 +14,21 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
-  TextEditingController emailOrUserNameController;
+  TextEditingController emailController;
   TextEditingController passwordController;
+
+  bool isLoading = false;
+
+  final formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
-    emailOrUserNameController = TextEditingController();
-    passwordController = TextEditingController();
-
     super.initState();
   }
 
   @override
   void dispose() {
-    emailOrUserNameController.dispose();
+    emailController.dispose();
     passwordController.dispose();
 
     super.dispose();
@@ -44,7 +45,7 @@ class _LogInPageState extends State<LogInPage> {
           child: Column(
             children: <Widget>[
               AuthTextFiled(
-                textController: emailOrUserNameController,
+                textController: emailController,
                 labelText: localization.email,
                 keyboardType: TextInputType.emailAddress,
                 assetIconPath: Assets.mailIcon,
@@ -72,8 +73,7 @@ class _LogInPageState extends State<LogInPage> {
   Future loginButtonPressHandler() async {
     var creds = 'qwer';
 
-    if (emailOrUserNameController.text != creds &&
-        passwordController.text != creds) {
+    if (emailController.text != creds && passwordController.text != creds) {
       await showDialog(
         context: context,
         builder: (_) => AlertDialog(
@@ -84,6 +84,37 @@ class _LogInPageState extends State<LogInPage> {
       );
     } else {
       await navigationService.navigateWithReplacementTo(Pages.shell);
+    }
+  }
+
+  signIn() async {
+    if (formKey.currentState.validate()) {
+      setState(() {
+        isLoading = true;
+      });
+
+      await authorizatoinService
+          .logInWithEmailAndPassword(
+              emailController.text, passwordController.text)
+          .then((result) async {
+        if (result != null) {
+          QuerySnapshot userInfoSnapshot =
+              await DatabaseMethods().getUserInfo(emailController.text);
+
+          HelperFunctions.saveUserLoggedInSharedPreference(true);
+          HelperFunctions.saveUserNameSharedPreference(
+              userInfoSnapshot.documents[0].data["userName"]);
+          HelperFunctions.saveUserEmailSharedPreference(
+              userInfoSnapshot.documents[0].data["userEmail"]);
+
+          navigationService.navigateWithReplacementTo(Pages.shell);
+        } else {
+          setState(() {
+            isLoading = false;
+            //show snackbar
+          });
+        }
+      });
     }
   }
 }

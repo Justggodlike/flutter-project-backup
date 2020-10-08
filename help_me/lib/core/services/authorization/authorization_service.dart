@@ -8,7 +8,7 @@ class AuthorizationService {
     return user != null ? UserModel(userId: user.uid) : null;
   }
 
-  Future signInWithEmailAndPassword(String email, String password) async {
+  Future logInWithEmailAndPassword(String email, String password) async {
     try {
       User user = (await _firebaseAuth.signInWithEmailAndPassword(
               email: email, password: password))
