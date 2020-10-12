@@ -23,6 +23,9 @@ class _LogInPageState extends State<LogInPage> {
 
   @override
   void initState() {
+    emailController = TextEditingController();
+    passwordController = TextEditingController();
+
     super.initState();
   }
 
@@ -38,36 +41,60 @@ class _LogInPageState extends State<LogInPage> {
   Widget build(BuildContext context) {
     var localization = I18n.of(context);
 
-    return AuthorizationTabBase(
-      children: <Widget>[
-        SizedBox(height: 40.0), //TODO: add insets as a const!!!
-        AuthTextFieldAreaContainer(
-          child: Column(
-            children: <Widget>[
-              AuthTextFiled(
-                textController: emailController,
-                labelText: localization.email,
-                keyboardType: TextInputType.emailAddress,
-                assetIconPath: Assets.mailIcon,
+    if (isLoading) {
+      return Container(
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    } else {
+      return Form(
+        key: formKey,
+        child: AuthorizationTabBase(
+          children: <Widget>[
+            SizedBox(height: 40.0), //TODO: add insets as a const!!!
+            AuthTextFieldAreaContainer(
+              child: Column(
+                children: <Widget>[
+                  AuthTextFiled(
+                    validator: (val) {
+                      return RegExp(//TODO add to const validator values
+                                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                              .hasMatch(val)
+                          ? null
+                          : "Please Enter Correct Email";
+                    },
+                    textController: emailController,
+                    labelText: localization.email,
+                    keyboardType: TextInputType.emailAddress,
+                    assetIconPath: Assets.mailIcon,
+                  ),
+                  AuthTextFiled(
+                    validator: (val) {
+                      return val.length < 6
+                          ? "Enter Password 6+ characters"
+                          : null;
+                    },
+                    textController: passwordController,
+                    labelText: localization.password,
+                    obscureText: true,
+                    keyboardType: TextInputType.visiblePassword,
+                    assetIconPath: Assets.passwordIcon,
+                  )
+                ],
               ),
-              AuthTextFiled(
-                textController: passwordController,
-                labelText: localization.password,
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-                assetIconPath: Assets.passwordIcon,
-              )
-            ],
-          ),
+            ),
+            SizedBox(height: 14.0),
+            PrimaryButtonWidget(
+              text: localization.logIn,
+              onPressedFunction: () async =>
+                  //loginButtonPressHandler(), //TODO: add providers handler to it
+                  signIn(),
+            ),
+          ],
         ),
-        SizedBox(height: 14.0),
-        PrimaryButtonWidget(
-          text: localization.logIn,
-          onPressedFunction: () async =>
-              loginButtonPressHandler(), //TODO: add providers handler to it
-        ),
-      ],
-    );
+      );
+    }
   }
 
   Future loginButtonPressHandler() async {
@@ -98,15 +125,6 @@ class _LogInPageState extends State<LogInPage> {
               emailController.text, passwordController.text)
           .then((result) async {
         if (result != null) {
-          QuerySnapshot userInfoSnapshot =
-              await DatabaseMethods().getUserInfo(emailController.text);
-
-          HelperFunctions.saveUserLoggedInSharedPreference(true);
-          HelperFunctions.saveUserNameSharedPreference(
-              userInfoSnapshot.documents[0].data["userName"]);
-          HelperFunctions.saveUserEmailSharedPreference(
-              userInfoSnapshot.documents[0].data["userEmail"]);
-
           navigationService.navigateWithReplacementTo(Pages.shell);
         } else {
           setState(() {
