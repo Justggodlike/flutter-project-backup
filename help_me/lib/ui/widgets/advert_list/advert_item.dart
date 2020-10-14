@@ -26,18 +26,12 @@ class AdvertItem extends StatelessWidget {
             height: 150,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: Colors.red,
-              gradient: LinearGradient(colors: [
-                Colors.red,
-                Colors.pink,
-                Colors.purple,
-                Colors.red,
-              ], begin: Alignment.topLeft, end: Alignment.bottomRight),
+              color: Color.fromARGB(255, 242, 242, 242),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.red,
-                  blurRadius: 12,
-                  offset: Offset(0, 6),
+                  color: Colors.blueGrey,
+                  blurRadius: 10,
+                  offset: Offset(0, 3),
                 ),
               ],
             ),
@@ -71,7 +65,7 @@ class AdvertItem extends StatelessWidget {
                               text: TextSpan(
                                 text: title,
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontWeight: FontWeight.w500,
                                   fontSize: 20,
                                 ),
@@ -86,7 +80,7 @@ class AdvertItem extends StatelessWidget {
                             child: Text(
                               price,
                               style: TextStyle(
-                                color: Colors.white,
+                                color: Colors.black,
                                 fontWeight: FontWeight.w800,
                                 fontSize: 24,
                               ),
@@ -99,7 +93,7 @@ class AdvertItem extends StatelessWidget {
                           child: Text(
                             location,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black38,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
@@ -113,7 +107,7 @@ class AdvertItem extends StatelessWidget {
                               child: Text(
                                 dateOfCreation,
                                 style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black38,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),

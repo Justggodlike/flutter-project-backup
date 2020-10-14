@@ -14,12 +14,16 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
-  TextEditingController emailOrUserNameController;
+  TextEditingController emailController;
   TextEditingController passwordController;
+
+  bool isLoading = false;
+
+  final formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
-    emailOrUserNameController = TextEditingController();
+    emailController = TextEditingController();
     passwordController = TextEditingController();
 
     super.initState();
@@ -27,7 +31,7 @@ class _LogInPageState extends State<LogInPage> {
 
   @override
   void dispose() {
-    emailOrUserNameController.dispose();
+    emailController.dispose();
     passwordController.dispose();
 
     super.dispose();
@@ -37,43 +41,66 @@ class _LogInPageState extends State<LogInPage> {
   Widget build(BuildContext context) {
     var localization = I18n.of(context);
 
-    return AuthorizationTabBase(
-      children: <Widget>[
-        SizedBox(height: 40.0), //TODO: add insets as a const!!!
-        AuthTextFieldAreaContainer(
-          child: Column(
-            children: <Widget>[
-              AuthTextFiled(
-                textController: emailOrUserNameController,
-                labelText: localization.email,
-                keyboardType: TextInputType.emailAddress,
-                assetIconPath: Assets.mailIcon,
+    if (isLoading) {
+      return Container(
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    } else {
+      return Form(
+        key: formKey,
+        child: AuthorizationTabBase(
+          children: <Widget>[
+            SizedBox(height: 40.0), //TODO: add insets as a const!!!
+            AuthTextFieldAreaContainer(
+              child: Column(
+                children: <Widget>[
+                  AuthTextFiled(
+                    validator: (val) {
+                      return RegExp(//TODO add to const validator values
+                                  r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                              .hasMatch(val)
+                          ? null
+                          : "Please Enter Correct Email";
+                    },
+                    textController: emailController,
+                    labelText: localization.email,
+                    keyboardType: TextInputType.emailAddress,
+                    assetIconPath: Assets.mailIcon,
+                  ),
+                  AuthTextFiled(
+                    validator: (val) {
+                      return val.length < 6
+                          ? "Enter Password 6+ characters"
+                          : null;
+                    },
+                    textController: passwordController,
+                    labelText: localization.password,
+                    obscureText: true,
+                    keyboardType: TextInputType.visiblePassword,
+                    assetIconPath: Assets.passwordIcon,
+                  )
+                ],
               ),
-              AuthTextFiled(
-                textController: passwordController,
-                labelText: localization.password,
-                obscureText: true,
-                keyboardType: TextInputType.visiblePassword,
-                assetIconPath: Assets.passwordIcon,
-              )
-            ],
-          ),
+            ),
+            SizedBox(height: 14.0),
+            PrimaryButtonWidget(
+              text: localization.logIn,
+              onPressedFunction: () async =>
+                  //loginButtonPressHandler(), //TODO: add providers handler to it
+                  signIn(),
+            ),
+          ],
         ),
-        SizedBox(height: 14.0),
-        PrimaryButtonWidget(
-          text: localization.logIn,
-          onPressedFunction: () async =>
-              loginButtonPressHandler(), //TODO: add providers handler to it
-        ),
-      ],
-    );
+      );
+    }
   }
 
   Future loginButtonPressHandler() async {
     var creds = 'qwer';
 
-    if (emailOrUserNameController.text != creds &&
-        passwordController.text != creds) {
+    if (emailController.text != creds && passwordController.text != creds) {
       await showDialog(
         context: context,
         builder: (_) => AlertDialog(
@@ -84,6 +111,28 @@ class _LogInPageState extends State<LogInPage> {
       );
     } else {
       await navigationService.navigateWithReplacementTo(Pages.shell);
+    }
+  }
+
+  signIn() async {
+    if (formKey.currentState.validate()) {
+      setState(() {
+        isLoading = true;
+      });
+
+      await authorizatoinService
+          .logInWithEmailAndPassword(
+              emailController.text, passwordController.text)
+          .then((result) async {
+        if (result != null) {
+          navigationService.navigateWithReplacementTo(Pages.shell);
+        } else {
+          setState(() {
+            isLoading = false;
+            //show snackbar
+          });
+        }
+      });
     }
   }
 }

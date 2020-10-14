@@ -8,4 +8,6 @@ class Assets {
   static const String closeIcon = 'assets/close_icon.svg';
   static const String avatar = 'assets/avatar.png';
   static const String logOutIcon = 'assets/logout_icon.svg';
+  static const String messageIcon = 'assets/message_icon.svg';
+  static const String searchIcon = 'assets/search_icon.svg';
 }
