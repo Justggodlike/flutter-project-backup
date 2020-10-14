@@ -41,9 +41,8 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var localization = I18n.of(context);
-    // return AdvertListWidget(
-    //   itemsList: advertsList,
-    // );
-    return AdvertPage();
+    return AdvertListWidget(
+      itemsList: advertsList,
+    );
   }
 }
