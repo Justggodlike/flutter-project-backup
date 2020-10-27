@@ -35,7 +35,7 @@ class _ShellPageState extends State<ShellPage> {
                 ),
                 _buildAction(
                   imageAssetPath: Assets.searchIcon,
-                  onIconPressedFuction: () => {navigationService.navigateTo(Pages.search)}, //TODO create search method
+                  onIconPressedFuction: () {}, //TODO create search method
                   badgeValue: 0,
                 ),
               ],
