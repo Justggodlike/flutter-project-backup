@@ -62,9 +62,6 @@ class NavigationService {
       case Pages.finalCreate:
         resultPage = FinalCreatePage();
         break;
-      case Pages.search:
-        resultPage = SearchPage();
-        break;
       case Pages.profile:
         resultPage = ProfilePage();
         break;
