@@ -4,7 +4,6 @@ import 'package:help_me/generated/i18n.dart';
 import 'package:help_me/ui/decorations/assets.dart';
 import 'package:help_me/ui/pages/advert_page/index.dart';
 import 'package:help_me/ui/widgets/advert_list/index.dart';
-import 'package:help_me/ui/widgets/image_carousel/index.dart';
 
 class HomePage extends StatelessWidget {
   final List<AdvertItemModel> advertsList = [
