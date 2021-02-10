@@ -22,7 +22,7 @@ class IconWithBageWidget extends Badge {
           position:
               badgePosition ?? BadgePosition.bottomStart(bottom: 9, start: 15),
           shape: BadgeShape.square,
-          borderRadius: 10.0,
+          //borderRadius: 10.0,
           elevation: 1.0,
           badgeColor: Colors.red[300],
           animationType: BadgeAnimationType.scale,
